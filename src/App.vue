@@ -82,6 +82,9 @@ import { ref, onMounted } from "vue";
 import { useStore } from '../src/store/store';
 
 const store = useStore();
+const slider1 = ref<boolean>(false)
+const slider2 = ref<boolean>(false)
+const slider3 = ref<boolean>(false)
 const telError = ref<boolean>(false);
 function validatePhoneNumber() {
   const regex = /^(?:\+)?\d(?:[ (]+)?\d{3}(?:[ )]+)?\d{3}(?:[- ]+)?\d{2}(?:[- ]+)?\d{2}$/gm
@@ -93,10 +96,6 @@ function validatePhoneNumber() {
   }
   else { store.showResult() }
 }
-
-const slider1 = ref(false)
-const slider2 = ref(false)
-const slider3 = ref(false)
 
 onMounted(() => {
   store.getData();
